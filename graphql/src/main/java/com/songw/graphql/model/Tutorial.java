@@ -20,7 +20,7 @@ public class Tutorial {
   @Column(name = "description")
   private String description;
 
-  @ManyToOne
+  @ManyToOne  // N:1 관계입니다.
   @JoinColumn(name = "author_id", nullable = false, updatable = false)
   private Author author;
 

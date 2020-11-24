@@ -32,7 +32,14 @@ public class Query implements GraphQLQueryResolver {
     return authorRepository.count();
   }
 
-  public long countTutorials() {
+  public long countTutorials() {  
     return tutorialRepository.count();
+  }
+  
+  public Author findAuthor(Long id) {
+	  
+	  System.out.println("id : " + id);
+	  
+	  return authorRepository.getOne(id);
   }
 }

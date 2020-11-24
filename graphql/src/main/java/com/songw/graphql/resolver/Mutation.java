@@ -13,7 +13,7 @@ import com.songw.graphql.repository.TutorialRepository;
 
 import javassist.NotFoundException;
 
-@Component
+@Component //개발자가 직접 개발한 클래스를 Bean으로 등록하고자 하는 경우 @Component 어노테이션을 활용
 public class Mutation implements GraphQLMutationResolver {
   private AuthorRepository authorRepository;
   private TutorialRepository tutorialRepository;

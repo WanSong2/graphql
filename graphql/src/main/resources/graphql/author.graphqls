@@ -1,16 +1,22 @@
+#GraphQL 서버는 클라이언트에게 API를 설명하는 공개된 스키마(Schemas)를 제공합니다.
+#아래 GraphQL 스키마(Schema)는 블로그의 게시글(post)과 작성자(author)에 
+#대한 정의와 조회를 하기 위한 루트 쿼리(Root Query)에 
+#대한 정의 그리고 등록, 수정, 삭제를 위한 루트 뮤테이션(Root Mutation)에 대한 정의를 나타냅니다.
+
 type Author {
 	id: ID!
 	name: String!
 	age: Int
 }
 
-# Root
+# 루트 쿼리 (Root Query)
 type Query {
 	findAllAuthors: [Author]!
 	countAuthors: Long!
+	findAuthor(id: Int!): Author
 }
 
-# Root
+# 루트 뮤테이션 (Root Mutation)
 type Mutation {
 	createAuthor(name: String!, age: Int): Author!
 }
