@@ -1,5 +1,7 @@
 package com.songw.graphql.resolver;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +18,7 @@ public class Query implements GraphQLQueryResolver {
 
   @Autowired
   public Query(AuthorRepository authorRepository, TutorialRepository tutorialRepository) {
+	System.out.println("Query !! ");
     this.authorRepository = authorRepository;
     this.tutorialRepository = tutorialRepository;
   }
@@ -36,10 +39,12 @@ public class Query implements GraphQLQueryResolver {
     return tutorialRepository.count();
   }
   
-  public Author findAuthor(Long id) {
-	  
-	  System.out.println("id : " + id);
-	  
-	  return authorRepository.getOne(id);
+  public Optional<Author> findAuthor(Long id) {
+	  return authorRepository.findById(id);
   }
+
+  public Optional<Tutorial> findTutorial(Long id) {
+	  return tutorialRepository.findById(id);
+  }
+  
 }
