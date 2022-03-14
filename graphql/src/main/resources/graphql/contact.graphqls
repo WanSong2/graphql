@@ -1,0 +1,18 @@
+type Contact {
+	id: ID!
+	customerNumber: String!
+	email: String
+	phoneNumber: String
+}
+
+# 루트 쿼리 (Root Query)
+type Query {
+	findAllContacts: [Contact]!
+	countContacts: Long!
+	findContact(id: Int!): Contact
+}
+
+# 루트 뮤테이션 (Root Mutation)
+type Mutation {
+	createContact(customerNumber: String!, email: String, phoneNumber: String): Contact!
+}

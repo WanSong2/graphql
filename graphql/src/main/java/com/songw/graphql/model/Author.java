@@ -11,7 +11,7 @@ public class Author {
 	
 	  @Id // 해당 칼럼이 식별키
 	  //주로 @GeneratedValue와 함께 식별키를 어떤 전략으로 생서하는지 명시합니다.
-	  @GeneratedValue(strategy = GenerationType.AUTO)
+	  @GeneratedValue(strategy = GenerationType.IDENTITY)
 	  private Long id;
 
 	  //인스턴스 변수가 컬럼이 되기 때문에,컬럼명을 별도로 지정하거나 컬럼의 사이즈, 제약조건들을 추가하기 위해 사용합니다.

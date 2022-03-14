@@ -1,0 +1,23 @@
+type Journey {
+	id: ID!
+	journeyKey: String!
+	origin: String
+	destination: String
+	departureDate: String
+	arriverDate: String
+	createId: String
+	createDate: String
+	pnr: String
+}
+
+# 루트 쿼리 (Root Query)
+type Query {
+	findAllJourneys: [Journey]!
+	countJourneys: Long!
+	findJourney(id: Int!): Journey
+}
+
+# 루트 뮤테이션 (Root Mutation)
+type Mutation {
+	createJourney(journeyKey: String!, origin: String, destination: String, departureDate: String, arriverDate: String, createId: String, createDate: String, pnr: String): Journey!
+}
