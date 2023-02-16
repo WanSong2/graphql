@@ -15,6 +15,7 @@ public class Author {
 	  private Long id;
 
 	  //인스턴스 변수가 컬럼이 되기 때문에,컬럼명을 별도로 지정하거나 컬럼의 사이즈, 제약조건들을 추가하기 위해 사용합니다.
+	  
 	  @Column(name = "name", nullable = false)
 	  private String name;
 
